@@ -3,27 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemutar Murottal Per Juz</title>
+    <title>Pemutar Murottal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Pemutar Murottal Per Juz</h2>
+        <h2>Pemutar Murottal</h2>
 
-        <!-- Pilihan Qari' -->
-        <label for="qari">Pilih Qari:</label>
-        <select id="qari">
-            <option value="sudais">Abdurrahman Sudais</option>
-            <option value="mishary">Mishary Rasyid</option>
-            <option value="dosari">Yasser Al-Dosari</option>
-            <option value="HanyAr-Rifai">Hany Ar-Rifai</option>
-            <option value="Shuraim">Saud Al Shuraim</option>
-            <option value="SaadAl-Ghamidi">Saad Al-Ghamidi</option>
+        <!-- Pilihan Mode (Juz atau Surah) -->
+        <label for="mode">Pilih Mode:</label>
+        <select id="mode" onchange="updateSelection()">
+            
+            <option value="surah">Surah</option>
+            <option value="juz">Juz</option>
         </select>
 
-        <!-- Pilihan Juz -->
-        <label for="juz">Pilih Juz:</label>
-        <select id="juz"></select>
+        <!-- Pilihan Qari' untuk Juz -->
+        <div id="qariJuzContainer">
+            <label for="qariJuz">Pilih Qari (Juz):</label>
+            <select id="qariJuz">
+                <option value="sudais">Abdurrahman Sudais</option>
+                <option value="mishary">Mishary Rasyid</option>
+                <option value="dosari">Yasser Al-Dosari</option>
+                <option value="HanyAr-Rifai">Hany Ar-Rifai</option>
+                <option value="Shuraim">Saud Al Shuraim</option>
+                <option value="SaadAl-Ghamidi">Saad Al-Ghamidi</option>
+            </select>
+        </div>
+
+        <!-- Pilihan Qari' untuk Surah -->
+        <div id="qariSurahContainer" style="display: none;">
+            <label for="qariSurah">Pilih Qari (Surah):</label>
+            <select id="qariSurah">
+                <option value="sudais">Abdurrahman Sudais</option>
+                
+            </select>
+        </div>
+
+        <!-- Pilihan Juz/Surah (dinamis) -->
+        <label for="selection">Pilih:</label>
+        <select id="selection"></select>
 
         <button onclick="playAudio()">Putar</button>
         <br>
@@ -48,4 +67,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
