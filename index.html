@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemutar Murottal Per Juz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Pemutar Murottal Per Juz</h2>
+
+        <!-- Pilihan Qari' -->
+        <label for="qari">Pilih Qari:</label>
+        <select id="qari">
+            <option value="sudais">Abdurrahman Sudais</option>
+            <option value="mishary">Mishary Rasyid</option>
+            <option value="dosari">Yasser Al-Dosari</option>
+            <option value="HanyAr-Rifai">Hany Ar-Rifai</option>
+            <option value="Shuraim">Saud Al Shuraim</option>
+            <option value="SaadAl-Ghamidi">Saad Al-Ghamidi</option>
+        </select>
+
+        <!-- Pilihan Juz -->
+        <label for="juz">Pilih Juz:</label>
+        <select id="juz"></select>
+
+        <button onclick="playAudio()">Putar</button>
+        <br>
+        <audio id="audioPlayer" controls></audio>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" onclick="seekAudio(event)">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="time-display">
+            <span id="currentTime">00:00</span>
+            <span id="duration">00:00</span>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 - Pemutar Murottal | Sumber: Archive.org
+        <p>Dibuat dengan ♥️ oleh M. Alfi Syuhadak</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
