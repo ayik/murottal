@@ -63,6 +63,10 @@ function formatJuzNumber(number) {
 function formatSurahNumber(number) {
     return number < 10 ? number.toString().padStart(2, '0') : number.toString().padStart(3, '0');
 }
+function formatSurahNumberMp3(number) {
+    return number.toString().padStart(3, '0'); // Selalu 3 digit (001-114)
+}
+
 
 function playAudio() {
     const mode = modeDropdown.value;
@@ -88,10 +92,19 @@ function playAudio() {
     } else {
         qari = qariSurahSelect.value;
         selectedValue = formatSurahNumber(selectionDropdown.value); // Format Surah ke 2 atau 3 digit
+        selectedValueMp3 = formatSurahNumberMp3(selectionDropdown.value);
 
+ 
         if (qari === "sudais") {
             audioUrl = `https://dn720304.ca.archive.org/0/items/as-sudais_202105/${selectedValue}.mp3`;
+        } else if (qari === "yasser") {
+            audioUrl = `https://server11.mp3quran.net/yasser/${selectedValueMp3}.mp3`;
+        } else if (qari === "qurashi") {
+            audioUrl = `https://server9.mp3quran.net/qurashi/${selectedValueMp3}.mp3`;
+        } else if (qari === "kurdi") {
+            audioUrl = `https://server6.mp3quran.net/kurdi/${selectedValueMp3}.mp3`;
         }
+            
     }
 
     audioPlayer.src = audioUrl;
@@ -118,4 +131,3 @@ function playNext() {
 
 // Inisialisasi pertama
 updateSelection();
-
