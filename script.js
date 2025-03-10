@@ -68,6 +68,7 @@ function formatSurahNumberMp3(number) {
 }
 
 
+
 function playAudio() {
     const mode = modeDropdown.value;
     let qari, selectedValue, audioUrl = "";
@@ -88,6 +89,7 @@ function playAudio() {
             audioUrl = `https://ia803200.us.archive.org/20/items/SaadAl-GhamidiPerJuz/${selectedValue}.mp3`;
         } else if (qari === "HanyAr-Rifai") {
             audioUrl = `https://ia800500.us.archive.org/17/items/HanyAr-RifaiPerJuz/${selectedValue}.mp3`;
+        
         }
     } else {
         qari = qariSurahSelect.value;
@@ -101,8 +103,8 @@ function playAudio() {
             audioUrl = `https://server11.mp3quran.net/yasser/${selectedValueMp3}.mp3`;
         } else if (qari === "qurashi") {
             audioUrl = `https://server9.mp3quran.net/qurashi/${selectedValueMp3}.mp3`;
-        } else if (qari === "kurdi") {
-            audioUrl = `https://server6.mp3quran.net/kurdi/${selectedValueMp3}.mp3`;
+        } else if (qari === "thubti") {
+            audioUrl = `https://server6.mp3quran.net/thubti/${selectedValueMp3}.mp3`;
         }
             
     }
